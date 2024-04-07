@@ -1,10 +1,11 @@
 import { forwardRef, MiddlewareConsumer, Module, NestModule, RequestMethod } from "@nestjs/common";
-import { AuthModule } from "src/auth/auth.module";
-import { UserIdCheckMiddleware } from "src/middlewares/user-id-check.middleware";
+import { AuthModule } from "../auth/auth.module";
+import { UserEntity } from "./entity/user.entity";
+import { TypeOrmModule } from "@nestjs/typeorm";
 import { UserController } from "./user.controller";
 import { UserService } from "./user.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { UserEntity } from "./entity/user.entity";
+import { UserIdCheckMiddleware } from "../middlewares/user-id-check.middleware";
+
 
 @Module({
     imports: [

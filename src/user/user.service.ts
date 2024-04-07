@@ -1,11 +1,12 @@
 import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
-import { CreateUserDTO } from "./dto/create-user.dto";
-import { UpdatePatchUserDTO } from "./dto/update-patch-user.dto";
-import { UpdatePutUserDTO } from "./dto/update-user.dto";
-import * as bcrypt from 'bcrypt';
-import { UserEntity } from "./entity/user.entity";
-import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
+import { UserEntity } from "./entity/user.entity";
+import { CreateUserDTO } from "./dto/create-user.dto";
+import * as bcrypt from 'bcrypt';
+import { Repository } from "typeorm";
+import { UpdatePutUserDTO } from "./dto/update-user.dto";
+import { UpdatePatchUserDTO } from "./dto/update-patch-user.dto";
+
 
 @Injectable()
 export class UserService {
@@ -105,7 +106,9 @@ export class UserService {
             throw new NotFoundException(`O usuário ${id} não existe.`);
         }
 
-        return this.usersRepository.delete(id);
+        await this.usersRepository.delete(id);
+
+        return true;
     }
 
     async exists(id: number) {
