@@ -6,8 +6,8 @@ export const userEntityList: UserEntity[] = [
     name: 'Marcelo',
     email: 'marcelosiqqueira@gmail.com',
     birthAt: new Date('2000-01-01'),
-    id: 1,
-    password: '$2b$10$zVQg8RDm..MtamBTgreMK.BfSUS1VaVZgSqpPzfki5PbeaGNgxeQO',
+    id: 3,
+    password: '$2b$10$LOyQmB5e7UEv649gFByiOeDLasQ3ePQQGCUDhkSXaX0pfTmLGVTE.',
     role: Role.Admin,
     createdAt: new Date(),
     updatedAt: new Date()
