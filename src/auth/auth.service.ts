@@ -109,7 +109,7 @@ export class AuthService{
             }
         });
 
-        return true;
+        return {sucesss: true};
     }
 
     async reset(password: string, token: string) {
